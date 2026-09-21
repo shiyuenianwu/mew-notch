@@ -13,4 +13,15 @@ enum HUDStyle: String, CaseIterable, Identifiable, Codable {
     case Minimal
     case Progress
     case Notched
+    
+    var displayName: String {
+        switch self {
+        case .Minimal:
+            return NSLocalizedString("Minimal", comment: "")
+        case .Progress:
+            return NSLocalizedString("Progress", comment: "")
+        case .Notched:
+            return NSLocalizedString("Notched", comment: "")
+        }
+    }
 }

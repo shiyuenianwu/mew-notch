@@ -15,7 +15,14 @@ enum NotchHeightMode: String, CaseIterable, Identifiable, Codable {
     case Manual
     
     var displayName: String {
-        return self.rawValue.replacingOccurrences(of: "_", with: " ")
+        switch self {
+        case .Match_Notch:
+            return NSLocalizedString("Match Notch", comment: "")
+        case .Match_Menu_Bar:
+            return NSLocalizedString("Match Menu Bar", comment: "")
+        case .Manual:
+            return NSLocalizedString("Manual", comment: "")
+        }
     }
 }
     

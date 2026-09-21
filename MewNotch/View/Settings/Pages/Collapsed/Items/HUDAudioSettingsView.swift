@@ -34,7 +34,7 @@ struct HUDAudioSettingsView: View {
                 ) {
                     Picker("", selection: ~$viewModel.outputDefaults.style) {
                         ForEach(HUDStyle.allCases) { style in
-                            Text(style.rawValue.capitalized).tag(style)
+                            Text(style.displayName).tag(style)
                         }
                     }
                     .labelsHidden()
@@ -93,7 +93,7 @@ struct HUDAudioSettingsView: View {
                 ) {
                     Picker("", selection: ~$viewModel.inputDefaults.style) {
                         ForEach(HUDStyle.allCases) { style in
-                            Text(style.rawValue.capitalized).tag(style)
+                            Text(style.displayName).tag(style)
                         }
                     }
                     .labelsHidden()
