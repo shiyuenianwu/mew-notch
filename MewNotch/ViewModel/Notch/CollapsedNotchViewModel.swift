@@ -28,6 +28,8 @@ class CollapsedNotchViewModel: ObservableObject {
     
     @Published var lastPowerStatus: String = ""
     @Published var lastBrightness: Float = 0.0
+    @Published var lastAudioInputVolume: Float = 0.0
+    @Published var lastAudioOutputVolume: Float = 0.0
     
     init() {
         self.startListeners()
@@ -201,12 +203,36 @@ class CollapsedNotchViewModel: ObservableObject {
             return
         }
         
+        let newVolume = VolumeManager.shared.getInputVolume()
+        
+        defer {
+            lastAudioInputVolume = newVolume
+        }
+        
+        // Reuse the HUD while it is on screen and only refresh its value and
+        // lifetime. Rebuilding the model on every change makes the HUD flicker
+        // when another app keeps adjusting the device volume in the background,
+        // which conference apps do through their automatic gain control.
+        if inputAudioVolumeHUD != nil {
+            withAnimation {
+                self.inputAudioVolumeHUD?.value = newVolume
+            }
+            
+            self.resetHUDTimer(&self.inputAudioVolumeHUD) {
+                withAnimation {
+                    self.inputAudioVolumeHUD = nil
+                }
+            }
+            
+            return
+        }
+        
         withAnimation {
             self.inputAudioVolumeHUD = .init(
                 lottie: nil,
                 icon: .init(systemName: "microphone.fill"),
-                name: "Input Volume",
-                value: VolumeManager.shared.getInputVolume(),
+                name: NSLocalizedString("Input Volume", comment: ""),
+                value: newVolume,
                 timer: inputAudioVolumeHUD?.timer
             )
         }
@@ -245,12 +271,34 @@ class CollapsedNotchViewModel: ObservableObject {
             return
         }
         
+        let newVolume = VolumeManager.shared.getOutputVolume()
+        
+        defer {
+            lastAudioOutputVolume = newVolume
+        }
+        
+        // See handleAudioInputVolumeChanges: refresh the visible HUD rather
+        // than rebuilding it, so rapid background volume changes do not flicker.
+        if outputAudioVolumeHUD != nil {
+            withAnimation {
+                self.outputAudioVolumeHUD?.value = newVolume
+            }
+            
+            self.resetHUDTimer(&self.outputAudioVolumeHUD) {
+                withAnimation {
+                    self.outputAudioVolumeHUD = nil
+                }
+            }
+            
+            return
+        }
+        
         withAnimation {
             self.outputAudioVolumeHUD = .init(
                 lottie: MewNotch.Lotties.speaker,
                 icon: MewNotch.Assets.iconSpeaker,
-                name: "Output Volume",
-                value: VolumeManager.shared.getOutputVolume(),
+                name: NSLocalizedString("Output Volume", comment: ""),
+                value: newVolume,
                 timer: outputAudioVolumeHUD?.timer
             )
         }
