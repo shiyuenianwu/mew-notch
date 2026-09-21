@@ -37,7 +37,17 @@ jobs:
             PROVISIONING_PROFILE_SPECIFIER="" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=YES \
-            ONLY_ACTIVE_ARCH=NO 2>&1 | tail -60
+            ONLY_ACTIVE_ARCH=NO > /tmp/build.log 2>&1
+          STATUS=$?
+          echo "=== 编译错误(去重)==="
+          grep -E "error:" /tmp/build.log | sort -u | head -40 || true
+          echo ""
+          echo "=== 编译警告(去重,前 20 条)==="
+          grep -E "warning:" /tmp/build.log | sort -u | head -20 || true
+          echo ""
+          echo "=== 日志结尾 ==="
+          tail -20 /tmp/build.log
+          exit $STATUS
 
       - name: Locate built app
         run: |
