@@ -20,11 +20,11 @@ enum NotchDisplayVisibility: String, CaseIterable, Codable, Identifiable {
     var displayName: String {
         switch self {
         case .AllDisplays:
-            return "All Displays"
+            return NSLocalizedString("All Displays", comment: "")
         case .NotchedDisplayOnly:
-            return "Notched Displays Only"
+            return NSLocalizedString("Notched Displays Only", comment: "")
         case .Custom:
-            return "Custom"
+            return NSLocalizedString("Custom", comment: "")
         }
     }
 }
