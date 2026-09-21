@@ -31,6 +31,14 @@ class CollapsedNotchViewModel: ObservableObject {
     @Published var lastAudioInputVolume: Float = 0.0
     @Published var lastAudioOutputVolume: Float = 0.0
     
+    /// Minimum volume delta that shows a HUD. Pressing the volume keys moves
+    /// the level by the system step (6.25%), while background automation
+    /// (conference apps running automatic gain control) nudges it by under
+    /// about 3%, so anything below this threshold is noise as far as the HUD
+    /// is concerned. Reacting to it made the volume HUD jitter while a
+    /// meeting was running.
+    private let volumeHUDThreshold: Float = 0.04
+    
     init() {
         self.startListeners()
         
@@ -205,14 +213,19 @@ class CollapsedNotchViewModel: ObservableObject {
         
         let newVolume = VolumeManager.shared.getInputVolume()
         
-        defer {
-            lastAudioInputVolume = newVolume
+        // Ignore notifications that carry no meaningful change. The device
+        // posts one every couple of seconds while a conference app runs, often
+        // with the level untouched, and assigning the same value to a
+        // @Published property still redraws the HUD.
+        guard newVolume != lastAudioInputVolume,
+              abs(lastAudioInputVolume - newVolume) >= volumeHUDThreshold else {
+            return
         }
         
-        // Reuse the HUD while it is on screen and only refresh its value and
-        // lifetime. Rebuilding the model on every change makes the HUD flicker
-        // when another app keeps adjusting the device volume in the background,
-        // which conference apps do through their automatic gain control.
+        lastAudioInputVolume = newVolume
+        
+        // Reuse the HUD while it is on screen instead of rebuilding it, so the
+        // animation is not replayed on every accepted change.
         if inputAudioVolumeHUD != nil {
             withAnimation {
                 self.inputAudioVolumeHUD?.value = newVolume
@@ -273,12 +286,15 @@ class CollapsedNotchViewModel: ObservableObject {
         
         let newVolume = VolumeManager.shared.getOutputVolume()
         
-        defer {
-            lastAudioOutputVolume = newVolume
+        // See handleAudioInputVolumeChanges for why both guards are needed.
+        guard newVolume != lastAudioOutputVolume,
+              abs(lastAudioOutputVolume - newVolume) >= volumeHUDThreshold else {
+            return
         }
         
-        // See handleAudioInputVolumeChanges: refresh the visible HUD rather
-        // than rebuilding it, so rapid background volume changes do not flicker.
+        lastAudioOutputVolume = newVolume
+        
+        // Refresh the visible HUD rather than rebuilding it.
         if outputAudioVolumeHUD != nil {
             withAnimation {
                 self.outputAudioVolumeHUD?.value = newVolume
