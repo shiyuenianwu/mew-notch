@@ -109,3 +109,9 @@
 "Takes you to general settings" = "跳转到通用设置";
 "Tap to Allow Camera" = "点按以允许摄像头";
 "Width Multiplier" = "宽度倍数";
+
+/* 侧边栏与开关说明补充 */
+"About" = "关于";
+"Collapsed" = "折叠";
+"Expanded" = "展开";
+"Expand notch when hovered.\nDisables click interactions in all HUDs." = "悬停时展开刘海。\n禁用所有 HUD 中的点击交互。";
