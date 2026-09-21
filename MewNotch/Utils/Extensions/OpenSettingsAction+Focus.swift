@@ -22,9 +22,11 @@ extension OpenSettingsAction {
         NSRunningApplication.current.activate(options: [.activateAllWindows])
         
         DispatchQueue.main.async {
-            NSApp.windows
-                .first { $0.isVisible && $0.canBecomeKey }
-                ?.makeKeyAndOrderFront(nil)
+            if let window = NSApp.windows.first(
+                where: { $0.isVisible && $0.canBecomeKey }
+            ) {
+                window.makeKeyAndOrderFront(nil)
+            }
         }
     }
 }
