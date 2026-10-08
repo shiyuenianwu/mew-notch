@@ -19,6 +19,40 @@
         }
       }
     },
+    "%@ seconds": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ seconds"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 秒"
+          }
+        }
+      }
+    },
+    "%@ seconds.\\n": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ seconds.\\n"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 秒。\\n"
+          }
+        }
+      }
+    },
     "About": {
       "comment": "Settings tab for app info and credits",
       "localizations": {
@@ -83,6 +117,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "隔空投送"
+          }
+        }
+      }
+    },
+    "AirDrop service could not be initialised": {
+      "comment": "Error shown when the AirDrop sharing service cannot be created",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AirDrop service could not be initialised"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法初始化隔空投送服务"
           }
         }
       }
@@ -480,6 +531,23 @@
         }
       }
     },
+    "Command could not be sent through mediaremote-adapter": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Command could not be sent through mediaremote-adapter"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法通过 mediaremote-adapter 发送命令"
+          }
+        }
+      }
+    },
     "Corner Radius": {
       "comment": "Corner radius slider label",
       "localizations": {
@@ -510,6 +578,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "自定义"
+          }
+        }
+      }
+    },
+    "Dark": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "深色"
           }
         }
       }
@@ -685,6 +770,23 @@
         }
       }
     },
+    "Expand notch when hovered.\\nDisables click interactions in all HUDs.": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expand notch when hovered.\\nDisables click interactions in all HUDs."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "悬停时展开刘海。\\n禁用所有 HUD 中的点击交互。"
+          }
+        }
+      }
+    },
     "Expand on Hover": {
       "comment": "Setting title for expanding notch on hover",
       "localizations": {
@@ -732,6 +834,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "展开状态项目"
+          }
+        }
+      }
+    },
+    "File cannot be sent with AirDrop": {
+      "comment": "Error shown when the selected files cannot be sent over AirDrop",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File cannot be sent with AirDrop"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法通过隔空投送发送文件"
           }
         }
       }
@@ -923,6 +1042,23 @@
         }
       }
     },
+    "Input Device": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Input Device"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "输入设备"
+          }
+        }
+      }
+    },
     "Input General": {
       "comment": "Section header for input device general settings",
       "localizations": {
@@ -936,6 +1072,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "输入通用"
+          }
+        }
+      }
+    },
+    "Input Volume": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Input Volume"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "输入音量"
           }
         }
       }
@@ -987,6 +1140,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "登录时启动"
+          }
+        }
+      }
+    },
+    "Left": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Left"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "左侧"
+          }
+        }
+      }
+    },
+    "Light": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "浅色"
           }
         }
       }
@@ -1333,6 +1520,23 @@
         }
       }
     },
+    "Output Device": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Output Device"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "输出设备"
+          }
+        }
+      }
+    },
     "Output General": {
       "comment": "Section header for output device general settings",
       "localizations": {
@@ -1346,6 +1550,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "输出通用"
+          }
+        }
+      }
+    },
+    "Output Volume": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Output Volume"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "输出音量"
           }
         }
       }
@@ -1486,6 +1707,23 @@
         }
       }
     },
+    "Screen Locked": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screen Locked"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "屏幕已锁定"
+          }
+        }
+      }
+    },
     "Select an Item": {
       "comment": "Placeholder text when no item is selected",
       "localizations": {
@@ -1622,40 +1860,6 @@
         }
       }
     },
-    "Show icon in menu bar for easy access": {
-      "comment": "Setting description for menu bar status icon",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show icon in menu bar for easy access"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在菜单栏显示图标以便快速访问"
-          }
-        }
-      }
-    },
-    "Show new title for": {
-      "comment": "Label for configuring title popup duration per app",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show new title for"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在此应用中显示新标题"
-          }
-        }
-      }
-    },
     "Show Notch On": {
       "comment": "Section title for choosing display visibility",
       "localizations": {
@@ -1669,23 +1873,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "在哪些显示器上显示刘海"
-          }
-        }
-      }
-    },
-    "Show on Lock Screen": {
-      "comment": "Toggle label for displaying notch on lock screen",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show on Lock Screen"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "在锁屏上显示"
           }
         }
       }
@@ -1720,6 +1907,57 @@
           "stringUnit": {
             "state": "translated",
             "value": "显示剩余时间"
+          }
+        }
+      }
+    },
+    "Show icon in menu bar for easy access": {
+      "comment": "Setting description for menu bar status icon",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show icon in menu bar for easy access"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在菜单栏显示图标以便快速访问"
+          }
+        }
+      }
+    },
+    "Show new title for": {
+      "comment": "Label for configuring title popup duration per app",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show new title for"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在此应用中显示新标题"
+          }
+        }
+      }
+    },
+    "Show on Lock Screen": {
+      "comment": "Toggle label for displaying notch on lock screen",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show on Lock Screen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在锁屏上显示"
           }
         }
       }
@@ -1894,6 +2132,23 @@
         }
       }
     },
+    "Takes you to general settings": {
+      "comment": "Restored from original Chinese localization",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takes you to general settings"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "跳转到通用设置"
+          }
+        }
+      }
+    },
     "Tap to Allow Camera": {
       "comment": "Button label to request camera permission",
       "localizations": {
@@ -1959,227 +2214,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "宽度倍数"
-          }
-        }
-      }
-    },
-    "Dark": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dark"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "深色"
-          }
-        }
-      }
-    },
-    "Left": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Left"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "左侧"
-          }
-        }
-      }
-    },
-    "Light": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Light"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "浅色"
-          }
-        }
-      }
-    },
-    "Command could not be sent through mediaremote-adapter": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Command could not be sent through mediaremote-adapter"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "无法通过 mediaremote-adapter 发送命令"
-          }
-        }
-      }
-    },
-    "Input Device": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Input Device"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "输入设备"
-          }
-        }
-      }
-    },
-    "Input Volume": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Input Volume"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "输入音量"
-          }
-        }
-      }
-    },
-    "Output Device": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Output Device"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "输出设备"
-          }
-        }
-      }
-    },
-    "Output Volume": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Output Volume"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "输出音量"
-          }
-        }
-      }
-    },
-    "Screen Locked": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Screen Locked"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "屏幕已锁定"
-          }
-        }
-      }
-    },
-    "Takes you to general settings": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Takes you to general settings"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "跳转到通用设置"
-          }
-        }
-      }
-    },
-    "Expand notch when hovered.\\nDisables click interactions in all HUDs.": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Expand notch when hovered.\\nDisables click interactions in all HUDs."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "悬停时展开刘海。\\n禁用所有 HUD 中的点击交互。"
-          }
-        }
-      }
-    },
-    "%@ seconds": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ seconds"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ 秒"
-          }
-        }
-      }
-    },
-    "%@ seconds.\\n": {
-      "comment": "Restored from original Chinese localization",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ seconds.\\n"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ 秒。\\n"
           }
         }
       }
