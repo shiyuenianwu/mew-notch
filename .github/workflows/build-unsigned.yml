@@ -1,0 +1,74 @@
+name: Build Unsigned App
+
+# 手动触发,或推到构建分支时自动触发
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - zh-cn-build
+
+jobs:
+  build:
+    name: Build MewNotch (zh-Hans)
+    runs-on: macos-26
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: List schemes and targets
+        run: xcodebuild -list -project MewNotch.xcodeproj
+
+      - name: Build (ad-hoc signed)
+        run: |
+          set -o pipefail
+          xcodebuild clean build \
+            -project MewNotch.xcodeproj \
+            -scheme MewNotch \
+            -configuration Release \
+            -derivedDataPath build \
+            -destination "generic/platform=macOS" \
+            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGN_STYLE=Manual \
+            DEVELOPMENT_TEAM="" \
+            PROVISIONING_PROFILE_SPECIFIER="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=YES \
+            ONLY_ACTIVE_ARCH=NO > /tmp/build.log 2>&1
+          STATUS=$?
+          echo "=== 编译错误(去重)==="
+          grep -E "error:" /tmp/build.log | sort -u | head -40 || true
+          echo ""
+          echo "=== 编译警告(去重,前 20 条)==="
+          grep -E "warning:" /tmp/build.log | sort -u | head -20 || true
+          echo ""
+          echo "=== 日志结尾 ==="
+          tail -20 /tmp/build.log
+          exit $STATUS
+
+      - name: Locate built app
+        run: |
+          echo "=== 查找构建产物 ==="
+          find build -name "*.app" -type d 2>/dev/null | head -10
+
+      - name: Package into zip
+        run: |
+          APP=$(find build -name "MewNotch.app" -type d 2>/dev/null | head -1)
+          if [ -z "$APP" ]; then echo "❌ 没找到 MewNotch.app"; find build -maxdepth 4 -type d | head -30; exit 1; fi
+          echo "✅ 找到: $APP"
+          mkdir -p out
+          ditto -c -k --keepParent "$APP" out/MewNotch-zh-Hans-unsigned.zip
+          ls -lh out/
+          echo "=== 验证中文本地化是否打进去了 ==="
+          ls -la "$APP/Contents/Resources/" | grep -i lproj
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MewNotch-zh-Hans
+          path: out/MewNotch-zh-Hans-unsigned.zip
+          if-no-files-found: error
+          retention-days: 30
