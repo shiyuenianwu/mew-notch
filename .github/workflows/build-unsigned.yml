@@ -49,6 +49,17 @@ jobs:
           tail -20 /tmp/build.log
           exit $STATUS
 
+      - name: Re-sign uniformly (ad-hoc)
+        run: |
+          APP=$(find build -name "MewNotch.app" -type d 2>/dev/null | head -1)
+          if [ -z "$APP" ]; then echo "❌ 没找到 MewNotch.app"; exit 1; fi
+          # 主程序与内嵌框架必须统一签名身份，否则库验证报 different Team IDs 直接崩
+          for f in "$APP"/Contents/Frameworks/*.framework; do
+            [ -e "$f" ] && codesign --force --deep --sign - "$f" && echo "重签名 $(basename "$f")"
+          done
+          codesign --force --sign - "$APP"
+          codesign -dv "$APP" 2>&1 | grep -E "Signature|TeamIdentifier"
+
       - name: Locate built app
         run: |
           echo "=== 查找构建产物 ==="
